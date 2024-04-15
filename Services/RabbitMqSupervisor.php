@@ -79,7 +79,7 @@ class RabbitMqSupervisor
      * @param string $kernelRootDir
      * @param string $environment
      */
-    public function __construct(Supervisor $supervisor, array $paths, array $commands, $consumers, $multipleConsumers, $batchConsumers, $rpcServers, $config, $sockFilePermissions, $kernelRootDir, $environment)
+    public function __construct(Supervisor $supervisor, array $paths, array $commands, $consumers, $multipleConsumers, $batchConsumers, $rpcServers, $config, $sockFilePermissions, $rootDir, $environment)
     {
         $this->supervisor = $supervisor;
         $this->paths = $paths;
@@ -90,7 +90,7 @@ class RabbitMqSupervisor
         $this->rpcServers = $rpcServers;
         $this->config = $config;
         $this->sockFilePermissions = $sockFilePermissions;
-        $this->rootDir = dirname($kernelRootDir);
+        $this->rootDir = $rootDir;
         $this->environment = $environment;
     }
 
